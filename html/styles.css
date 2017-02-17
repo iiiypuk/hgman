@@ -1,0 +1,56 @@
+* {
+  margin: 0; padding: 0; outline: 0;
+}
+
+body {
+  color: #032137;
+  background-color: #29516D;
+  font-family: 'Vegur';
+  font-size: 32px;
+}
+
+.wrap {
+  max-width: 400px;
+  margin: 10px auto;
+}
+
+div.word {
+  padding: 8px;
+  border-top: 1px solid #032137;
+}
+
+div.lives {
+  font-size: 24px;
+}
+
+div.word, div.lives {
+  text-align: center;
+}
+
+div.keyboard {
+  text-align: center;
+}
+
+div.keyboard button {
+  color: #032137;
+  font-family: 'Vegur';
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: #708EA4;
+  padding: 8px;
+  border: 1px solid #032137;
+  box-sizing: border-box;
+  margin: 2px;
+}
+
+div.keyboard button:disabled {
+  opacity: 0.5;
+}
+
+footer {
+  border-top: 1px solid #032137;
+  padding: 8px;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 16px;
+}
