@@ -7,7 +7,7 @@
 body {
   color: #032137;
   background-color: #29516D;
-  font-family: 'Vegur';
+  font-family: 'Play';
   font-size: 32px;
 }
 
@@ -35,7 +35,7 @@ div.keyboard {
 
 div.keyboard button {
   color: #032137;
-  font-family: 'Vegur';
+  font-family: 'Play';
   border-radius: 4px;
   font-size: 16px;
   background-color: #708EA4;

@@ -4,8 +4,29 @@ var lives = 6;
 var gameWord = words[Math.floor(Math.random() * words.length)].toUpperCase();
 var gameAnswered = new Array(gameWord.length + 1).join('-');
 
+var keyboardLayouts = {
+  'usQwertyKeyboard' : 'abcdefghijklmnopqrstuvwxyz'.toUpperCase(),
+  'ruQwertyKeyboard' : 'йцукеёнгшщзхъфывапролджэячсмитьбю'.toUpperCase()
+}
+
+// Функция генерации html кода клавиатуры
+function generateKeyboard(layout)
+{
+  var htmlKeyboardStr = '';
+
+  keyboardLayouts[layout].split('').forEach(function(word)
+  {
+    htmlKeyboardStr = htmlKeyboardStr + '<button id="' + word +
+      '" onclick="offChar(\'' + word + '\')">' + word + '</button>';
+  })
+
+  document.getElementById("keyboard").innerHTML = htmlKeyboardStr;
+}
+
 window.onload = function()
 {
+  generateKeyboard('usQwertyKeyboard');
+  
   console.log(gameWord) // for DEBUG
   document.getElementById("WORD").innerHTML = gameAnswered;
   document.getElementById("lives").innerHTML = 'Lives ' + lives;
