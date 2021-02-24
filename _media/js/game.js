@@ -7,15 +7,24 @@ const keyboardLayouts = {
 }
 
 const pageCredits = '\
-	<p>Font F5.6 by\
+	<p class="text-center">Font F5.6 by\
 	  <a href="http://dotcolon.net/">DOT COLON</a>\
+  </p>\
+  \
+  <p class="text-center">UI by\
+  	<a href="https://jenil.github.io/chota/">chota.css</a>\
   </p>\
 ';
 
 const pageStatistics = '';
 
+const words = [
+	'google', 'speed', 'design', 'forest', 'forever', 'love',
+	'horizon', 'defect'
+];
+
 // game variables
-let gameWord = 'speed'.toUpperCase();
+let gameWord = words[Math.floor(Math.random() * words.length)].toUpperCase();
 let gameAnswered = new Array(gameWord.length + 1).join('-');
 let lives = 6;
 
@@ -26,7 +35,7 @@ function generateKeyboard(layout)
 
 	layout.split('').forEach(function(letter)
 	{
-		keyboardHtmlStr = keyboardHtmlStr + '<button class="button outline" id="' + letter +
+		keyboardHtmlStr = keyboardHtmlStr + '<button class="button outline is-marginless" id="' + letter +
 			'" onclick="offChar(\'' + letter + '\')"> ' + letter + '</button>';
 	})
 
@@ -108,6 +117,10 @@ function showPage(element, pageName)
 window.onload = function()
 {
 	generateKeyboard(keyboardLayouts['usQwertyKeyboard']);
-
+	document.querySelector('#lives').innerHTML = 'Lives ' + lives;
+	console.log('Word:', gameWord.toLowerCase());
 	document.querySelector('#word').innerHTML = gameAnswered;
+
+	// fix load empty word
+	// if (gameWord === 0) { document.location.reload(true); }
 }
