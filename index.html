@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+ /_     ...   _    /_
+/_//_/ ////_//_//_//\
+   _/     _//
+-->
+<head>
+  <meta charset="utf-8">
+  <title>Hangman</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="_media/css/chota.min.css">
+  <link rel="stylesheet" href="_media/css/styles.css">
+  <link rel="icon" type="image/png" href="_media/img/favicon.png">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <nav class="nav">
+        <div class="nav-left">
+          <a class="brand" href="#">Hangman game</a>
+        </div>
+        <div class="nav-center">
+          <p id="lives" class="button error">loading...</p>
+        </div>
+        <div class="nav-right">
+          <a class="button dropdown">Язык</a>
+          <a class="button dark" id="theme-switch" onclick="switchMode(this)">☀️</a>
+        </div>
+      </nav>
+    </header>
+
+    <nav class="tabs is-full">
+      <a onclick="document.location.reload(true);" class="active" id="gameButton">Game</a>
+      <a onclick="showPage(this, pageStatistics);" id="statsButton">Statistics</a>
+      <a onclick="showPage(this, pageCredits);" id="creditsButton">Credits</a>
+    </nav>
+
+    <br>
+
+    <section id="content">
+      <p id="word" class="card text-center text-uppercase">
+        Loading word...
+      </p>
+
+      <div id="keyboard" class="is-hidden text-center">
+        ... keyboard ...
+      </div>
+    </section>
+
+    <hr>
+    <footer class="text-center">
+      <p class="text-grey is-marginless is-small">
+        by iiiypuk<br>
+        ver: 2.0.0
+      </p>
+    </footer>
+  </div>
+
+  <script>
+    if (window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.body.classList.add('dark');
+    }
+
+    function switchMode(el) {
+      const bodyClass = document.body.classList;
+      bodyClass.contains("dark")
+        ? ((el.innerHTML = "☀️"), bodyClass.remove("dark"))
+        : ((el.innerHTML = "🌙"), bodyClass.add("dark"));
+    }
+
+  </script>
+  <script type="text/javascript" src="_media/js/game.js"></script>
+</body>
+</html>
