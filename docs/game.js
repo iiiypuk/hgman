@@ -47,7 +47,7 @@ function wrong()
     var gamesFail = localStorage.getItem('gamesFail');
     localStorage.setItem('gamesFail', parseInt(gamesFail) + 1);
     alert('You dead');
-    return;
+    document.location.reload(true);
   }
 
   lives -= 1;
@@ -89,6 +89,6 @@ function offChar(char)
     var gamesWon = localStorage.getItem('gamesWon');
     localStorage.setItem('gamesWon', parseInt(gamesWon) + 1);
     alert('You Win');
-    return;
+    document.location.reload(true);
   }
 }
