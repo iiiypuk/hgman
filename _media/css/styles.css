@@ -9,6 +9,10 @@
 	font-display: swap;
 }
 
+:root {
+	/*--font-size: 2rem;*/
+}
+
 body.dark {
 	--bg-color: #000;
 	--bg-secondary-color: #131316;
@@ -19,4 +23,8 @@ body.dark {
 
 body {
 	font-family: 'F5.6';
+}
+
+p#word {
+	font-size: 4rem;
 }
