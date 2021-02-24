@@ -27,14 +27,14 @@
     </header>
 
     <nav class="tabs is-full">
-      <a class="active">Game</a>
-      <a>Statistics</a>
-      <a>Credits</a>
+      <a onclick="document.location.reload(true);" class="active" id="gameButton">Game</a>
+      <a onclick="showPage(this, pageStatistics);" id="statsButton">Statistics</a>
+      <a onclick="showPage(this, pageCredits);" id="creditsButton">Credits</a>
     </nav>
 
     <br>
 
-    <section>
+    <section id="content">
       <p id="word" class="card text-center text-uppercase">
         Loading word...
       </p>
