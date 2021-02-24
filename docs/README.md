@@ -1,1 +1,1 @@
-![Screenshot](https://raw.githubusercontent.com/iiiypuk/hgman/master/html/screen.png)
+![Screenshot](screen.png)
