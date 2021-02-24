@@ -1,3 +1,5 @@
+"use strict";
+
 var words = ['google', 'speed', 'window', 'horizon'];
 
 var lives = 6;
