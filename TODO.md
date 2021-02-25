@@ -1,5 +1,5 @@
-[+] Keyboard fit
-[ ] Game Statistics
-[ ] Restart scene
 [ ] Android manifest
+[+] Keyboard fit
+[+] Game Statistics
+[+] Restart scene
 [+] iOS web app

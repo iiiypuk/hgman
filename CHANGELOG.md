@@ -1,5 +1,6 @@
 ## 2.0.2 # Build 2 [2021-02-25]
 - ➕ - Added game statistics
+- ➕ - Added end game scene
 - ✔️ - Fix keyboard fize on big screen
 - ♻️ - JS code replace `var` by `let`
 

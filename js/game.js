@@ -67,9 +67,13 @@ function letterClick(letter)
 
 	if (gameAnswered.split('').indexOf('-') == -1)
 	{
-		alert('You Win');
 		updateStats('stWinWords');
-		document.location.reload(true);
+
+		document.querySelector('#keyboard').innerHTML = '\
+		<img src="https://icongr.am/clarity/happy-face.svg?size=128&color=28bd14">\
+		<h1 class="text-success">Your winner!!</h1>\
+		<button class="button error" onclick="document.location.reload(true);"\
+		>Restart game</button>';
 	}
 }
 
@@ -78,9 +82,13 @@ function wrongLetter()
 {
   if (lives <= 0)
   {
-    alert('You dead');
     updateStats('stTotalGames');
-    document.location.reload(true);
+
+    document.querySelector('#keyboard').innerHTML = '\
+		<img src="https://icongr.am/clarity/sad-face.svg?size=128&color=d43939">\
+		<h1 class="text-error">Your lose!!</h1>\
+		<button class="button error" onclick="document.location.reload(true);"\
+		>Restart game</button>';
   }
 
   lives -= 1;
