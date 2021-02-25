@@ -1,5 +1,15 @@
 {
-  "dependencies": {
-    "chota": "0.8.0"
-  }
+	"name": "hgman",
+	"version": "2.0.2",
+	"description": "",
+	"keywords": [],
+	"author": "Alexander Popov",
+	"license": "MIT",
+	"browserslist": [
+		"defaults",
+		"not dead"
+	],
+	"dependencies": {
+		"chota": "0.8.0"
+	}
 }

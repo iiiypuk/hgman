@@ -7,16 +7,18 @@
 -->
 <head>
   <meta charset="utf-8">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="mobile-web-app-capable" content="yes">
   <title>WORDs</title>
-  <meta name="apple-mobile-web-app-title" content="WORDs">
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimal-ui">
   <link rel="stylesheet" href="https://unpkg.com/chota@0.8.0">
-  <!-- dev mode -->
-  <!-- <link rel="stylesheet" href="_media/css/chota.min.css"> -->
-  <link rel="stylesheet" href="_media/css/styles.css">
+  <link rel="stylesheet" href="_media/css/styles.css?v=2">
   <link rel="icon" type="image/png" href="_media/img/favicon.png">
+  <!-- Mobile -->
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimal-ui">
+  <meta name="format-detection" content="telephone=no">
+  <!-- Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <!-- iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="WORDs">
   <link rel="apple-touch-icon" href="_media/img/apple-touch-icon.png">
   <link rel="apple-touch-startup-image" href="_media/img/apple-launch-icon.png">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -26,7 +28,7 @@
     <header>
       <nav class="nav">
         <div class="nav-left hide-xs">
-          <a class="brand" href="#">WORDs</a>
+          <a class="brand">WORDs</a>
         </div>
         <div class="nav-center">
           <p id="lives" class="button error is-full-width">loading...</p>
@@ -47,20 +49,26 @@
     <br>
 
     <section id="content">
+      <!-- answer word div -->
       <p id="word" class="card text-center text-uppercase">
         Loading word...
       </p>
 
-      <div id="keyboard" class="is-hidden text-center">
-        ... keyboard ...
+      <!-- keyboard div -->
+      <div class="row">
+        <div class="col hide-xs hide-sm"></div>
+        <div id="keyboard" class="col-5-md is-hidden text-center is-full-width">
+          ... keyboard ...
+        </div>
+        <div class="col hide-xs hide-sm"></div>
       </div>
     </section>
 
     <footer class="text-center hide-xs">
       <hr>
       <p class="text-grey is-marginless is-small">
-        by iiiypuk<br>
-        ver: 2.0.1
+        by <a href="//iiiypuk.me/about/" target="_blank">iiiypuk</a><br>
+        ver: <a href="https://github.com/iiiypuk/hgman/blob/master/CHANGELOG.md" target="_blank">2.0.2</a>
       </p>
       <div id="statistics" class="is-hidden">
         <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
@@ -85,6 +93,6 @@
     }
 
   </script>
-  <script type="text/javascript" src="_media/js/game.js"></script>
+  <script type="text/javascript" src="_media/js/game.js?v=2"></script>
 </body>
 </html>
