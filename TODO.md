@@ -1,3 +1,4 @@
 [ ] Keyboard fit
-[ ] iOS web app
-[ ] Game Statistic
+[ ] Game Statistics
+[ ] Restart scene
+[+] iOS web app
