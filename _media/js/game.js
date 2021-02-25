@@ -35,7 +35,7 @@ function generateKeyboard(layout)
 
 	layout.split('').forEach(function(letter)
 	{
-		keyboardHtmlStr = keyboardHtmlStr + '<button class="button outline is-marginless" id="' + letter +
+		keyboardHtmlStr = keyboardHtmlStr + '<button class="button clear is-marginless" id="' + letter +
 			'" onclick="offChar(\'' + letter + '\')"> ' + letter + '</button>';
 	})
 
@@ -123,4 +123,11 @@ window.onload = function()
 
 	// fix load empty word
 	// if (gameWord === 0) { document.location.reload(true); }
+
+	if (window.screen.availWidth <= 599)
+	{
+		document.querySelector('#lives').classList.remove('error');
+		document.querySelector('#lives').classList.add('dark');
+		alert(599);
+	}
 }
