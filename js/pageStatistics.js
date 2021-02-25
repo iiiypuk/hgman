@@ -11,29 +11,50 @@ const pageStatistics = '\
 		</thead>\
 		<tbody>\
 			<tr>\
-				<th>Всего игр</th>\
-				<th id="stTotalGames">0</th>\
+				<th>Total games</th>\
+				<th id="stTotalGames">...</th>\
 			</tr>\
 			<tr>\
-				<th>Отгаданных слов</th>\
-				<th id="stWinWords">0</th>\
+				<th>Guess words</th>\
+				<th id="stWinWords">...</th>\
 			</tr>\
 			<tr>\
-				<th>% побед</th>\
-				<th id="stWinPercentage">0</th>\
+				<th>% Win</th>\
+				<th id="stWinPercentage">...</th>\
 			</tr>\
 			<tr>\
-				<th>Всего букв нажато</th>\
-				<th id="stLetterClick">0</th>\
+				<th>Total letters clicked</th>\
+				<th id="stLetterClick">...</th>\
 			</tr>\
 			<tr>\
-				<th>Букв отгадано</th>\
-				<th id="stWinLetter">0</th>\
+				<th>Correctly guessed letters</th>\
+				<th id="stCorrLetter">...</th>\
 			</tr>\
 			<tr>\
-				<th>Процент верных букв</th>\
-				<th id="stWinLetterPercent">0</th>\
+				<th>% correctly letters</th>\
+				<th id="stWinLetterPercent">...</th>\
 			</tr>\
 		</tbody>\
 	</table>\
+	<p class="text-center">\
+		<buttton class="button error" onclick="localStorage.clear();">Clear statistics</buttton>\
+	</p>\
 ';
+
+
+function updateStatsPage()
+{
+	let stTotalGames = localStorage.getItem('stTotalGames');
+	let stWinWords = localStorage.getItem('stWinWords');
+	let stWinPercentage = localStorage.getItem('stWinPercentage');
+	let stLetterClick = localStorage.getItem('stLetterClick');
+	let stCorrLetter = localStorage.getItem('stCorrLetter');
+	let stWinLetterPercent = localStorage.getItem('stWinLetterPercent');
+
+	document.querySelector('#stTotalGames').innerHTML = stTotalGames;
+	document.querySelector('#stWinWords').innerHTML = stWinWords;
+	document.querySelector('#stWinPercentage').innerHTML = Math.round((stWinWords / stTotalGames) * 100);
+	document.querySelector('#stLetterClick').innerHTML = stLetterClick;
+	document.querySelector('#stCorrLetter').innerHTML = stCorrLetter;
+	document.querySelector('#stWinLetterPercent').innerHTML = Math.round((stCorrLetter / stLetterClick) * 100);
+}

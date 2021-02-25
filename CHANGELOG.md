@@ -1,5 +1,7 @@
 ## 2.0.2 # Build 2 [2021-02-25]
+- ➕ - Added game statistics
 - ✔️ - Fix keyboard fize on big screen
+- ♻️ - JS code replace `var` by `let`
 
 ## 2.0.1 [2021-02-25]
 - ℹ️ - Make iOS web app

@@ -16,15 +16,15 @@ let gameWord = words[Math.floor(Math.random() * words.length)].toUpperCase();
 let gameAnswered = new Array(gameWord.length + 1).join('-');
 let lives = 6;
 
-// Функция генерации html кода клавиатуры
+// init keyboard
 function generateKeyboard(layout)
 {
-	var keyboardHtmlStr = '';
+	let keyboardHtmlStr = '';
 
 	layout.split('').forEach(function(letter)
 	{
 		keyboardHtmlStr = keyboardHtmlStr + '<button class="button clear is-marginless" id="' + letter +
-			'" onclick="offChar(\'' + letter + '\')"> ' + letter + '</button>';
+			'" onclick="letterClick(\'' + letter + '\')"> ' + letter + '</button>';
 	})
 
 	let keyboard = document.querySelector("#keyboard");
@@ -32,17 +32,20 @@ function generateKeyboard(layout)
 	document.querySelector("#keyboard").innerHTML = keyboardHtmlStr;
 }
 
-function offChar(letter)
+// letter click action
+function letterClick(letter)
 {
-	var charButton = document.getElementById(letter);
+	let charButton = document.getElementById(letter);
 	charButton.disabled = true; 
 
-	var indices = [];
-	var idx = gameWord.split('').indexOf(letter)
+	let indices = [];
+	let idx = gameWord.split('').indexOf(letter)
 	
 	if (idx == -1)
 	{
-		wrong();
+		wrongLetter();
+		
+		updateStats('stLetterClick');
 		return;
 	}
 	
@@ -54,30 +57,29 @@ function offChar(letter)
 
 	indices.forEach(function(item, indices)
 	{
-		var wordArray = gameAnswered.split('')
+		let wordArray = gameAnswered.split('')
 		wordArray[item] = letter;
 		gameAnswered = wordArray.join('');
 		document.querySelector("#word").innerHTML = gameAnswered;
-		var wordsAnswered = localStorage.getItem('wordsAnswered');
-		localStorage.setItem('wordsAnswered', parseInt(wordsAnswered) + 1);
+		
+		updateStats('stCorrLetter');
 	})
 
 	if (gameAnswered.split('').indexOf('-') == -1)
 	{
-		var gamesWon = localStorage.getItem('gamesWon');
-		localStorage.setItem('gamesWon', parseInt(gamesWon) + 1);
 		alert('You Win');
+		updateStats('stWinWords');
 		document.location.reload(true);
 	}
 }
 
-function wrong()
+// action by wrong letter
+function wrongLetter()
 {
   if (lives <= 0)
   {
-    var gamesFail = localStorage.getItem('gamesFail');
-    localStorage.setItem('gamesFail', parseInt(gamesFail) + 1);
     alert('You dead');
+    updateStats('stTotalGames');
     document.location.reload(true);
   }
 
@@ -85,7 +87,7 @@ function wrong()
   document.querySelector("#lives").innerHTML = 'Lives ' + lives;
 }
 
-
+// display tab content
 function showPage(element, pageName)
 {
 	// alert(event.srcElement.id);
@@ -97,11 +99,15 @@ function showPage(element, pageName)
 	document.querySelector("#" + element.id).classList.add('active');
 
 	document.querySelector("#content").innerHTML = pageName;
+
+	if (pageName == pageStatistics) { updateStatsPage(); }
 }
 
-// game
+// game init
 window.onload = function()
 {
+	updateStats('stCheck');
+
 	generateKeyboard(keyboardLayouts['usQwertyKeyboard']);
 	document.querySelector('#lives').innerHTML = 'Lives ' + lives;
 	console.log('Word:', gameWord.toLowerCase());
