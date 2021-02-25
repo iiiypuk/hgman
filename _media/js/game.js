@@ -111,8 +111,6 @@ function showPage(element, pageName)
 	document.querySelector("#content").innerHTML = pageName;
 }
 
-
-
 // game
 window.onload = function()
 {
@@ -121,13 +119,9 @@ window.onload = function()
 	console.log('Word:', gameWord.toLowerCase());
 	document.querySelector('#word').innerHTML = gameAnswered;
 
-	// fix load empty word
-	// if (gameWord === 0) { document.location.reload(true); }
-
 	if (window.screen.availWidth <= 599)
 	{
 		document.querySelector('#lives').classList.remove('error');
 		document.querySelector('#lives').classList.add('dark');
-		alert(599);
 	}
 }
