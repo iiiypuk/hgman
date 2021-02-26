@@ -1,5 +1,13 @@
+## Legend
+- 🐛 - Bug
+- ✔️ - Fixed
+- ❌ - Removed
+- ➕ - Added
+- ℹ️ - Information
+- ♻️ - Edited
+
 ## 2.0.3 # Build 3 [Development]
-- 
+- ➕ - Show hidden word by Lose
 
 ## 2.0.2 # Build 2 [2021-02-25]
 - ➕ - Added game statistics
@@ -13,11 +21,3 @@
 
 ## 2.0.0 [2021-02-25] 
 Init version
-
-## Legend
-- 🐛 - Bug
-- ✔️ - Fixed
-- ❌ - Removed
-- ➕ - Added
-- ℹ️ - Information
-- ♻️ - Edited

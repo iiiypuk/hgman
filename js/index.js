@@ -69,6 +69,7 @@ function letterClick(letter)
 	{
 		updateStats('stWinWords');
 
+		// display win scene
 		document.querySelector('#keyboard').innerHTML = '\
 		<img src="https://icongr.am/clarity/happy-face.svg?size=128&color=28bd14">\
 		<h1 class="text-success">Your winner!!</h1>\
@@ -84,6 +85,11 @@ function wrongLetter()
   {
     updateStats('stTotalGames');
 
+    // display hidden word
+    document.querySelector("#word").innerHTML = gameWord;
+    document.querySelector("#word").classList.add('text-success');
+
+    // display lose scene
     document.querySelector('#keyboard').innerHTML = '\
 		<img src="https://icongr.am/clarity/sad-face.svg?size=128&color=d43939">\
 		<h1 class="text-error">Your lose!!</h1>\
