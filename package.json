@@ -17,7 +17,8 @@
 	},
 	"scripts": {
 		"build": "uglifyjs js/_* js/index.js  -o docs/game.js",
-		"server": "python3.7 -m http.server --directory ./docs/"
+		"server": "python3.7 -m http.server --directory ./docs/",
+		"beautify": "uglifyjs -b beautify,comments ${} -o ${}"
 	},
 	"devDependencies": {
 		"uglify-js": "^3.12.8"
