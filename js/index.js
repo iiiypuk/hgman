@@ -19,7 +19,7 @@ let lives = 6;
 function generateKeyboard(layout) {
     let keyboardHtmlStr = "";
     layout.split("").forEach(function(letter) {
-        keyboardHtmlStr = keyboardHtmlStr + '<button class="button clear is-marginless" id="' + letter + '" onclick="letterClick(\'' + letter + "')\"> " + letter + "</button>";
+        keyboardHtmlStr += `<button class="button clear is-marginless" id="${letter}" onclick="letterClick('${letter}')">${letter}</button>`;
     });
     let keyboard = document.querySelector("#keyboard");
     keyboard.classList.remove("is-hidden");
@@ -51,7 +51,7 @@ function letterClick(letter) {
     if (gameAnswered.split("").indexOf("-") == -1) {
         updateStats("stWinWords");
         // display win scene
-                document.querySelector("#keyboard").innerHTML = '\t\t<img src="https://icongr.am/clarity/happy-face.svg?size=128&color=28bd14">\t\t<h1 class="text-success">Your winner!!</h1>\t\t<button class="button error" onclick="document.location.reload(true);"\t\t>Restart game</button>';
+        document.querySelector("#keyboard").innerHTML = '\t\t<img src="https://icongr.am/clarity/happy-face.svg?size=128&color=28bd14">\t\t<h1 class="text-success">Your winner!!</h1>\t\t<button class="button error" onclick="document.location.reload(true);"\t\t>Restart game</button>';
     }
 }
 
@@ -60,10 +60,10 @@ function wrongLetter() {
     if (lives <= 0) {
         updateStats("stTotalGames");
         // display hidden word
-                document.querySelector("#word").innerHTML = gameWord;
+        document.querySelector("#word").innerHTML = gameWord;
         document.querySelector("#word").classList.add("text-success");
         // display lose scene
-                document.querySelector("#keyboard").innerHTML = '\t\t<img src="https://icongr.am/clarity/sad-face.svg?size=128&color=d43939">\t\t<h1 class="text-error">Your lose!!</h1>\t\t<button class="button error" onclick="document.location.reload(true);"\t\t>Restart game</button>';
+        document.querySelector("#keyboard").innerHTML = '\t\t<img src="https://icongr.am/clarity/sad-face.svg?size=128&color=d43939">\t\t<h1 class="text-error">Your lose!!</h1>\t\t<button class="button error" onclick="document.location.reload(true);"\t\t>Restart game</button>';
     }
     lives -= 1;
     document.querySelector("#lives").innerHTML = "Lives " + lives;
@@ -71,7 +71,6 @@ function wrongLetter() {
 
 // display tab content
 function showPage(element, pageName) {
-    // alert(event.srcElement.id);
     [ "gameButton", "statsButton", "creditsButton" ].forEach(function(item) {
         document.querySelector("#" + item).classList.remove("active");
     });

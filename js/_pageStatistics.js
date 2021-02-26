@@ -1,5 +1,3 @@
-'use strict';
-
 const pageStatistics = '\
 	<table>\
 		<caption>User statistics</caption>\
