@@ -1,4 +1,4 @@
-'use stheadict';
+'use strict';
 
 const pageStatistics = '\
 	<table>\

@@ -1,3 +1,4 @@
+[ ] Loading page
 [ ] Localization
 [ ] Fix GAME tab for not refresh page
 [ ] Show word if lose

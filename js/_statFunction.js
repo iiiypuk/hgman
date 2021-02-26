@@ -1,3 +1,5 @@
+'use strict';
+
 function updateStats(statParameter)
 {
 	let stTotalGames = JSON.parse(localStorage.getItem('stTotalGames'));

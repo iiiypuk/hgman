@@ -16,6 +16,10 @@
 		"chota": "0.8.0"
 	},
 	"scripts": {
-		"server": "python3.7 -m http.server --directory ."
+		"build": "uglifyjs js/_* js/index.js  -o docs/game.js",
+		"server": "python3.7 -m http.server --directory ./docs/"
+	},
+	"devDependencies": {
+		"uglify-js": "^3.12.8"
 	}
 }

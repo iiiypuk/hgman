@@ -1,9 +1,9 @@
 @font-face {
 	font-family: 'F5.6';
-	src: url('/hgman/_media/fonts/F5.6-Regular.eot');
-	src: url('/hgman/_media/fonts/F5.6-Regular.eot?#iefix') format('embedded-opentype'),
-		url('/hgman/_media/fonts/F5.6-Regular.woff2') format('woff2'),
-		url('/hgman/_media/fonts/F5.6-Regular.woff') format('woff');
+	src: url('fonts/F5.6-Regular.eot');
+	src: url('fonts/F5.6-Regular.eot?#iefix') format('embedded-opentype'),
+		url('fonts/F5.6-Regular.woff2') format('woff2'),
+		url('fonts/F5.6-Regular.woff') format('woff');
 	font-weight: normal;
 	font-style: normal;
 	font-display: swap;
