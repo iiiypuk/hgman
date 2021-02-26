@@ -2,7 +2,10 @@
 	"name": "hgman",
 	"version": "2.0.2",
 	"description": "",
-	"keywords": [],
+	"keywords": [
+		"game",
+		"word"
+	],
 	"author": "Alexander Popov",
 	"license": "MIT",
 	"browserslist": [
@@ -11,5 +14,8 @@
 	],
 	"dependencies": {
 		"chota": "0.8.0"
+	},
+	"scripts": {
+		"server": "python3.7 -m http.server --directory ."
 	}
 }
